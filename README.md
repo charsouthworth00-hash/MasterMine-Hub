@@ -1,1 +1,1 @@
-# MasterMine-Hub
+# MasterMine Hub
