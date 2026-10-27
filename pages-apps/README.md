@@ -1,6 +1,7 @@
-# MasterMine standalone Pages websites
+# MasterMine standalone pages
 
-Each app has a self-contained static `index.html`:
+Each static app lives in its own source folder:
+
 - `docs/`
 - `slides/`
 - `sheets/`
@@ -11,9 +12,21 @@ Each app has a self-contained static `index.html`:
 - `chat/`
 - `mail/`
 
-## Cloudflare Pages setup
+## Deployments
 
-Create one Pages project per app, connect this repository, and set the production branch to `main`. Set **Root directory** to `pages-apps/<app>`, leave the build command blank (no build step is needed), and set the output directory to the selected folder's root (usually `.`). Example: Docs uses `pages-apps/docs`. Each project gets its own `.pages.dev` hostname. A project has to be created/configured in Cloudflare before it has a public URL.
+The main MasterMine HUB build copies these folders into the Vite `dist/` output automatically. After the connected Cloudflare Pages project successfully rebuilds, the apps will be available on that same `.pages.dev` hostname at:
+
+- `/docs/`
+- `/slides/`
+- `/sheets/`
+- `/studio/`
+- `/gx/`
+- `/drive/`
+- `/meet/`
+- `/chat/`
+- `/mail/`
+
+To give all nine apps separate `.pages.dev` hostnames, create a separate Pages project for each app. Cloudflare's monorepo documentation currently limits one Git repository to five Pages projects, so nine individual projects require a second repository or a Cloudflare limit increase. See https://developers.cloudflare.com/pages/configuration/monorepos/
 
 ## Feature limits
 
