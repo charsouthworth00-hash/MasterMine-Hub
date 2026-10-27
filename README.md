@@ -1,16 +1,28 @@
-# React + Vite
+# MasterMine HUB
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Welcome to MasterMine HUB — your gateway to the MasterMine digital world.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Built with React and Vite.
 
-## React Compiler
+Install dependencies with `npm install`.
+Start the development server with `npm run dev`.
+Build for production with `npm run build`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Planned apps
 
-## Expanding the Oxlint configuration
+- MasterMine Docs
+- MasterMine Slides
+- MasterMine Sheets
+- MasterMine Studio
+- MasterMine Drive
+- MasterMine GX
+- MasterMine Meet
+- MasterMine Chat
+- MasterMine Planner
+- MasterMine Notes
+- MasterMine Mail
+- MasterMine NEWS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+© 2010 MasterMine HUB · Made for your digital world 💜
