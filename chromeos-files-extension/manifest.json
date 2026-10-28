@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "MasterMine Drive for Files",
+  "version": "1.0.0",
+  "description": "Mount a persistent MasterMine Drive location in the ChromeOS Files app.",
+  "permissions": [
+    "fileSystemProvider"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "MasterMine Drive",
+    "default_popup": "popup.html"
+  },
+  "file_system_provider_capabilities": {
+    "configurable": false,
+    "watchable": false,
+    "multiple_mounts": false,
+    "source": "network"
+  }
+}
