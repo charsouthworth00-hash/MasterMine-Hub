@@ -1,7 +1,5 @@
 # MasterMine Drive for the ChromeOS Files app
 
-![MasterMine Drive](https://raw.githubusercontent.com/charsouthworth00-hash/MasterMine-Hub/main/chromeos-files-extension/icon.png)
-
 **MasterMine Drive** adds a storage location named **MasterMine Drive** to the left sidebar of the ChromeOS Files app.
 
 ## Download the extension
