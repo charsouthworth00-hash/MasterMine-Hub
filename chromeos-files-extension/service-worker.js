@@ -184,6 +184,12 @@ async function requireParentDirectory(path) {
 async function makeDirectory(path, recursive) {
   if (path === '/') throw providerError('EXISTS', 'Root already exists.');
   const segments = path.split('/').filter(Boolean);
+  if (!recursive) {
+    if (await readEntry(path)) throw providerError('EXISTS', 'Directory already exists.');
+    await requireParentDirectory(path);
+    await writeEntry(makeEntry(path, true, new ArrayBuffer(0)));
+    return;
+  }
   let current = '';
   for (let i = 0; i < segments.length; i += 1) {
     current += '/' + segments[i];
@@ -194,7 +200,6 @@ async function makeDirectory(path, recursive) {
       if (!existing.isDirectory) throw providerError('NOT_A_DIRECTORY', 'A parent path is a file.');
       continue;
     }
-    if (i > 0 && !recursive) throw providerError('NOT_FOUND', 'Parent directory does not exist.');
     const parent = await readEntry(parentPath(current));
     if (!parent || !parent.isDirectory) throw providerError('NOT_FOUND', 'Parent directory does not exist.');
     await writeEntry(makeEntry(current, true, new ArrayBuffer(0)));
