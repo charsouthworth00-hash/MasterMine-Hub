@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MasterMine Drive</title>
+  <style>
+    :root{font-family:Arial,Helvetica,sans-serif;color:#25203d;background:#f7f5ff}
+    body{width:290px;margin:0;padding:18px}
+    h1{font-size:19px;margin:0 0 8px}
+    p{font-size:13px;line-height:1.5;color:#625d77}
+    button{width:100%;padding:11px 12px;margin:5px 0;border:0;border-radius:10px;background:#5b39b6;color:white;font-weight:700;cursor:pointer}
+    button.secondary{background:#e9e2ff;color:#35216e}
+    #status{min-height:36px;padding-top:8px;font-size:12px;line-height:1.45}
+    .foot{font-size:11px;color:#858098;margin-top:8px}
+  </style>
+</head>
+<body>
+  <h1>☁️ MasterMine Drive</h1>
+  <p>Mount your MasterMine Drive location in the ChromeOS Files app. Files saved here are kept locally in this Chrome profile.</p>
+  <button id="mount">Mount in Files</button>
+  <button id="check" class="secondary">Check mount status</button>
+  <div id="status" role="status" aria-live="polite">Ready.</div>
+  <p class="foot">Local prototype · no cloud sync yet</p>
+  <script src="popup.js"></script>
+</body>
+</html>
