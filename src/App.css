@@ -173,3 +173,7 @@ footer { padding: 20px 0 28px; border-top: 1px solid #242333; color: #716c83; fo
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 }
+
+/* Cards with an external app link can be opened by clicking anywhere on the card. */
+.app-card-link { cursor: pointer; }
+.app-card-link:focus-visible { outline: 2px solid #b39bff; outline-offset: 3px; }
