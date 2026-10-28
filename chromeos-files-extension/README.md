@@ -1,34 +1,38 @@
 # MasterMine Drive for the ChromeOS Files app
 
-This folder contains a Manifest V3 ChromeOS file-system provider extension. When mounted, it adds a location named **MasterMine Drive** to the left side of the ChromeOS Files app.
+![MasterMine Drive](https://raw.githubusercontent.com/charsouthworth00-hash/MasterMine-Hub/main/chromeos-files-extension/icon.png)
+
+**MasterMine Drive** adds a storage location named **MasterMine Drive** to the left sidebar of the ChromeOS Files app.
+
+## Download the extension
+
+**[Download MasterMine Drive for ChromeOS (ZIP)](https://github.com/charsouthworth00-hash/MasterMine-Hub/archive/refs/heads/main.zip)**
+
+After downloading and extracting the ZIP:
+
+1. Open `chrome://extensions` in Chrome.
+2. Turn on **Developer mode**, if your device allows it.
+3. Click **Load unpacked**.
+4. Open the extracted `MasterMine-Hub-main` folder, then select the **`chromeos-files-extension`** folder (the one containing `manifest.json`).
+5. Open the extension's popup and click **Mount in Files**.
+6. Open the ChromeOS Files app and select **MasterMine Drive** from the left sidebar.
+
+> **Chrome Web Store status:** MasterMine Drive is not published in the Chrome Web Store yet. For now, use the ZIP download and install it with **Load unpacked**. Publishing requires a Chrome Web Store developer account, a reviewed store listing, and submission/approval; adding a README link does not publish the extension automatically.
 
 ## Current prototype behaviour
 
 - Creates and reads directories and files.
 - Supports reading, writing, truncating, moving, copying and deleting files.
 - Keeps file contents in IndexedDB in the extension's local Chrome profile.
-- Supports files with any name, including the five Master DOCX Group extensions: .masterdocx, .masterslides, .masternote, .mastersheet and .mastercanvas.
+- Supports files with any name, including the Master DOCX Group extensions: `.masterdocx`, `.masterslides`, `.masternote`, `.mastersheet` and `.mastercanvas`.
 
 ## Important limitation
 
-This is a **local-only prototype**, not cloud storage. It does not sync with the MasterMine Drive web app or with another device. The current web app only tracks file details locally; a shared server/API is needed before the website and Files app can use the same files. The local file-store is separate from Downloads and separate from website localStorage.
-
-## Install for testing on ChromeOS
-
-1. In Chrome, open chrome://extensions.
-2. Turn on Developer mode if your device allows it.
-3. Select Load unpacked.
-4. Choose this repository's chromeos-files-extension folder.
-5. Click the MasterMine Drive extension icon and select Mount in Files.
-6. Open the ChromeOS Files app. Select **MasterMine Drive** from the left sidebar.
-
-The mounted location is a provider volume in the Files app, not a normal folder inside Downloads. ChromeOS remembers mounted file systems; use the extension popup to check the mount status.
-
-If the device is managed by a school or organisation, extension installation may be restricted by its administrator.
+This is a **local-only prototype**, not cloud storage. It does not sync with the MasterMine Drive website or another device. The local file store is separate from Downloads and from website localStorage. A shared backend/API is needed before the website and Files app can use the same files.
 
 ## Development notes
 
-- Uses ChromeOS-only chrome.fileSystemProvider API.
-- IndexedDB gives the prototype persistent local storage, but it does not offer cloud backup.
+- Uses the ChromeOS-only `chrome.fileSystemProvider` API.
+- IndexedDB provides persistent local storage but not cloud backup.
 - The prototype has a 128 MiB limit per file.
-- This extension has not been published in the Chrome Web Store and must be tested on ChromeOS.
+- If the Chromebook is managed by a school or organisation, extension installation may be restricted by its administrator.
