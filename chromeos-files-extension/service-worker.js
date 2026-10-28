@@ -157,6 +157,17 @@ async function ensureRoot() {
   if (!(await readEntry('/'))) {
     await writeEntry(makeEntry('/', true, new ArrayBuffer(0)));
   }
+
+  // Keep the standard MasterMine Drive folders present on every mount.
+  for (const name of ['Documents', 'Portaits', 'Slides', 'Spreadsheets']) {
+    const path = '/' + name;
+    const existing = await readEntry(path);
+    if (!existing) {
+      await writeEntry(makeEntry(path, true, new ArrayBuffer(0)));
+    } else if (!existing.isDirectory) {
+      console.warn(`MasterMine Drive default folder path is occupied by a file: ${path}`);
+    }
+  }
 }
 
 function metadataFor(entry) {
