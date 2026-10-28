@@ -247,7 +247,7 @@ function App() {
       </section>
       <section className="apps-section" id="apps">
         <div className="section-heading"><div><div className="section-eyebrow">YOUR WORKSPACE</div><h2>Your apps</h2><p>{filteredApps.length} apps in your ecosystem</p></div><label className="search-box"><span>⌕</span><input type="search" placeholder="Search apps..." value={search} onChange={e => setSearch(e.target.value)} aria-label="Search apps" /></label></div>
-        <div className="app-grid">{filteredApps.map(app => <article className="app-card" key={app.name}><div className={`app-icon ${app.color}`}>{app.icon}</div><div className="app-card-title">{app.name}</div><p>{app.desc}</p><button className="launch-btn" onClick={() => launchApp(app)}>Open app <span>↗</span></button></article>)}</div>
+        <div className="app-grid">{filteredApps.map(app => <article className={`app-card${app.url ? ' app-card-link' : ''}`} key={app.name} onClick={app.url ? () => launchApp(app) : undefined} onKeyDown={app.url ? event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); launchApp(app); } } : undefined} role={app.url ? 'link' : undefined} tabIndex={app.url ? 0 : undefined} aria-label={app.url ? `Open ${app.name} in a new tab` : undefined}><div className={`app-icon ${app.color}`}>{app.icon}</div><div className="app-card-title">{app.name}</div><p>{app.desc}</p><button className="launch-btn" onClick={event => { event.stopPropagation(); launchApp(app); }}>Open app <span>↗</span></button></article>)}</div>
         {filteredApps.length === 0 && <p className="empty">No apps match that search. Try another name!</p>}
       </section>
 
