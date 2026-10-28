@@ -10,18 +10,18 @@ Install dependencies with `npm install`.
 Start the development server with `npm run dev`.
 Build for production with `npm run build`.
 
-## Planned apps
+## Apps
 
-- MasterMine Docs
-- MasterMine Slides
-- MasterMine Sheets
-- MasterMine Studio
+- MasterMine Docs – .masterdocx
+- MasterMine Slides – .masterslides
+- MasterMine Sheets - .mastersheet
+- MasterMine Studio – .mastercanvas
 - MasterMine Drive
 - MasterMine GX
 - MasterMine Meet
 - MasterMine Chat
 - MasterMine Planner
-- MasterMine Notes
+- MasterMine Notes – .masternote
 - MasterMine Mail
 - MasterMine NEWS
 
