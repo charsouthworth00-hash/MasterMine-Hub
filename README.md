@@ -26,3 +26,10 @@ Build for production with `npm run build`.
 - MasterMine NEWS
 
 © 2010 MasterMine HUB · Made for your digital world 💜
+
+## ChromeOS Files app extension
+
+The `chromeos-files-extension` folder contains a ChromeOS-only provider that mounts a **MasterMine Drive** location in the Files app. Open that folder's README for installation steps.
+
+The current extension is a local prototype: it stores files in the extension's IndexedDB and does not sync with the MasterMine Drive website or across devices. A shared backend is needed for that.
+
